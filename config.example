@@ -1,0 +1,8 @@
+module.exports = {
+    db: {
+        host: "202.92.7.92",
+        user: "quangnt",
+        password: "Quagteo1@",
+        database: "lean_nodeJs",
+    },
+};
