@@ -3,9 +3,7 @@ const nodemailer = require("nodemailer");
 const router = express.Router();
 
 router.post("/send-email", async (req, res) => {
-    const { otp, mail } = req.body;
-    console.log("🚀 ~ app.post ~ mail:", mail);
-
+    const { otp, mail, phone } = req.body;
     const transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
         port: 465,
@@ -22,7 +20,8 @@ router.post("/send-email", async (req, res) => {
             to: mail,
             subject: "Xác nhận OTP",
             text: `Xin chào,
-
+    Số điện thoại của bạn: ${phone}
+    Email của bạn: ${mail}
     Đây là mã OTP của bạn: ${otp}
 
     Trân trọng,
